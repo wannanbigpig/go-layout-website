@@ -566,23 +566,23 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   border-radius: var(--radius-md);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s;
   cursor: pointer;
   border: none;
   white-space: nowrap;
-  min-height: 48px;
+  min-height: 44px;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-  min-width: 160px;
+  min-width: 140px;
   width: auto;
 }
 
@@ -595,7 +595,7 @@ onUnmounted(() => {
   background: var(--color-bg-card);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  min-width: 160px;
+  min-width: 140px;
   width: auto;
 }
 
@@ -605,9 +605,9 @@ onUnmounted(() => {
 }
 
 .btn-large {
-  padding: 16px 32px;
-  font-size: 16px;
-  min-width: 180px;
+  padding: 14px 28px;
+  font-size: 15px;
+  min-width: 160px;
   width: auto;
 }
 
@@ -1310,7 +1310,7 @@ onUnmounted(() => {
 
 /* ========== 演示区域 ========== */
 .demo {
-  padding: 80px 0;
+  padding: 60px 0;
   background: var(--color-bg);
   width: 100%;
 }
@@ -1326,19 +1326,24 @@ onUnmounted(() => {
   padding: 0 20px;
 }
 
+.demo-content {
+  width: 100%;
+}
+
 .demo-content .section-tag,
 .demo-content .section-title,
 .demo-content .section-desc {
-  text-align: left;
-  margin-left: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .demo-credentials {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
-  margin: 32px 0;
+  padding: 20px;
+  margin: 24px 0;
   width: 100%;
 }
 
@@ -1629,7 +1634,28 @@ onUnmounted(() => {
   }
   
   .demo-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
     padding: 0 16px;
+  }
+  
+  .demo-content .section-tag,
+  .demo-content .section-title,
+  .demo-content .section-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .demo-credentials {
+    padding: 16px;
+  }
+  
+  .btn-large {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
   }
 }
 
