@@ -238,7 +238,7 @@
 
     <!-- 演示 -->
     <section id="demo" class="demo">
-      <div class="container">
+      <div class="container-full">
         <div class="demo-wrapper">
           <div class="demo-content">
             <span class="section-tag">在线演示</span>
@@ -517,19 +517,29 @@ onUnmounted(() => {
 /* ========== 重置样式 ========== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100%;
 }
 
-/* ========== 通用 ========== */
+/* ========== 容器 ========== */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.container-full {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .section-header {
@@ -634,13 +644,13 @@ body {
 }
 
 .nav-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 .logo {
@@ -871,6 +881,7 @@ body {
   text-align: center;
   max-width: 900px;
   width: 100%;
+  padding: 0 10px;
 }
 
 .hero-badge {
@@ -1322,6 +1333,10 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .demo-content .section-tag,
@@ -1337,6 +1352,7 @@ body {
   border-radius: var(--radius-lg);
   padding: 24px;
   margin: 32px 0;
+  width: 100%;
 }
 
 .credential-item {
@@ -1554,7 +1570,7 @@ body {
   }
   
   .hero {
-    padding: 80px 16px 50px;
+    padding: 80px 0 50px;
   }
   
   .hero-content {
@@ -1568,7 +1584,7 @@ body {
   }
   
   .hero-cta .btn {
-    width: 100%;
+    width: calc(100% - 32px);
     max-width: 280px;
     justify-content: center;
   }
@@ -1579,6 +1595,10 @@ body {
   
   .stat-divider {
     display: none;
+  }
+  
+  .features {
+    padding: 60px 0;
   }
   
   .features-grid {
@@ -1616,6 +1636,10 @@ body {
   }
   
   .container {
+    padding: 0 16px;
+  }
+  
+  .demo-wrapper {
     padding: 0 16px;
   }
 }
