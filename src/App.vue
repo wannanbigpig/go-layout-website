@@ -508,24 +508,8 @@ onUnmounted(() => {
   background: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
   width: 100%;
   min-width: 320px;
-}
-
-/* ========== 重置样式 ========== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 /* ========== 容器 ========== */
