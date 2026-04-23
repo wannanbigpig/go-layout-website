@@ -599,6 +599,7 @@ html, body {
   color: white;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
   min-width: 160px;
+  width: auto;
 }
 
 .btn-primary:hover {
@@ -611,6 +612,7 @@ html, body {
   color: var(--color-text);
   border: 1px solid var(--color-border);
   min-width: 160px;
+  width: auto;
 }
 
 .btn-secondary:hover {
@@ -622,6 +624,7 @@ html, body {
   padding: 16px 32px;
   font-size: 16px;
   min-width: 180px;
+  width: auto;
 }
 
 /* ========== 导航栏 ========== */
@@ -1574,23 +1577,25 @@ html, body {
   }
   
   .hero-content {
-    padding: 0;
+    padding: 0 16px;
+    width: 100%;
   }
   
   .hero-cta {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
+    padding: 0 16px;
   }
   
   .hero-cta .btn {
-    width: calc(100% - 32px);
-    max-width: 280px;
+    width: 100%;
     justify-content: center;
   }
   
   .hero-stats {
     gap: 16px;
+    padding: 0 16px;
   }
   
   .stat-divider {
@@ -1664,6 +1669,15 @@ html, body {
   .code-tab {
     padding: 10px 16px;
     font-size: 13px;
+  }
+  
+  .hero-content,
+  .hero-cta,
+  .hero-stats,
+  .container,
+  .demo-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 </style>
