@@ -508,13 +508,28 @@ onUnmounted(() => {
   background: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+}
+
+/* ========== 重置样式 ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* ========== 通用 ========== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 .section-header {
@@ -523,7 +538,8 @@ onUnmounted(() => {
 }
 
 .section-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 6px 16px;
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(34, 211, 238, 0.2));
   border: 1px solid var(--color-border);
@@ -554,6 +570,7 @@ onUnmounted(() => {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 14px 28px;
   border-radius: var(--radius-md);
@@ -563,12 +580,15 @@ onUnmounted(() => {
   transition: all 0.3s;
   cursor: pointer;
   border: none;
+  white-space: nowrap;
+  min-height: 48px;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  min-width: 160px;
 }
 
 .btn-primary:hover {
@@ -580,6 +600,7 @@ onUnmounted(() => {
   background: var(--color-bg-card);
   color: var(--color-text);
   border: 1px solid var(--color-border);
+  min-width: 160px;
 }
 
 .btn-secondary:hover {
@@ -590,6 +611,7 @@ onUnmounted(() => {
 .btn-large {
   padding: 16px 32px;
   font-size: 16px;
+  min-width: 180px;
 }
 
 /* ========== 导航栏 ========== */
@@ -601,10 +623,11 @@ onUnmounted(() => {
   z-index: 1000;
   padding: 20px 0;
   transition: all 0.3s;
+  width: 100%;
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 15, 0.9);
+  background: rgba(10, 10, 15, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
   padding: 12px 0;
@@ -613,10 +636,11 @@ onUnmounted(() => {
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
@@ -624,6 +648,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -646,6 +671,7 @@ onUnmounted(() => {
   font-size: 20px;
   font-weight: 700;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -663,6 +689,7 @@ onUnmounted(() => {
   background: transparent;
   border: none;
   font-size: 15px;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -674,6 +701,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 .github-btn {
@@ -687,6 +715,8 @@ onUnmounted(() => {
   color: var(--color-text);
   text-decoration: none;
   transition: all 0.3s;
+  white-space: nowrap;
+  height: 42px;
 }
 
 .github-btn:hover {
@@ -707,6 +737,7 @@ onUnmounted(() => {
   background: transparent;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .mobile-menu-btn span {
@@ -769,14 +800,17 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 120px 24px 80px;
+  padding: 100px 20px 60px;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .gradient-orb {
@@ -827,6 +861,8 @@ onUnmounted(() => {
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-content {
@@ -834,6 +870,7 @@ onUnmounted(() => {
   z-index: 10;
   text-align: center;
   max-width: 900px;
+  width: 100%;
 }
 
 .hero-badge {
@@ -863,10 +900,10 @@ onUnmounted(() => {
 }
 
 .hero-title {
-  font-size: clamp(36px, 8vw, 72px);
+  font-size: clamp(32px, 8vw, 64px);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .title-line {
@@ -885,11 +922,11 @@ onUnmounted(() => {
 }
 
 .hero-description {
-  font-size: clamp(16px, 3vw, 18px);
-  line-height: 1.8;
+  font-size: clamp(15px, 3vw, 17px);
+  line-height: 1.7;
   color: var(--color-text-secondary);
-  max-width: 650px;
-  margin: 0 auto 40px;
+  max-width: 600px;
+  margin: 0 auto 32px;
 }
 
 .hero-cta {
@@ -897,7 +934,7 @@ onUnmounted(() => {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .btn-arrow {
@@ -928,7 +965,7 @@ onUnmounted(() => {
 }
 
 .stat-value {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
   -webkit-background-clip: text;
@@ -950,7 +987,7 @@ onUnmounted(() => {
 
 .hero-scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -989,22 +1026,26 @@ onUnmounted(() => {
 
 /* ========== 特性区域 ========== */
 .features {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--color-bg-secondary);
+  width: 100%;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .feature-card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 28px;
   transition: all 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card:hover {
@@ -1018,6 +1059,9 @@ onUnmounted(() => {
   width: 56px;
   height: 56px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-icon-bg {
@@ -1031,10 +1075,13 @@ onUnmounted(() => {
 .feature-icon {
   position: relative;
   color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -1052,6 +1099,7 @@ onUnmounted(() => {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: auto;
 }
 
 .feature-list li {
@@ -1064,13 +1112,14 @@ onUnmounted(() => {
 
 /* ========== 技术架构 ========== */
 .architecture {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--color-bg);
+  width: 100%;
 }
 
 .tech-showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
 }
 
@@ -1117,16 +1166,21 @@ onUnmounted(() => {
 
 .tech-logo .el-icon {
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tech-info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .tech-name {
   font-weight: 600;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .tech-desc {
@@ -1136,19 +1190,22 @@ onUnmounted(() => {
 
 /* ========== 快速开始 ========== */
 .quickstart {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--color-bg-secondary);
+  width: 100%;
 }
 
 .code-showcase {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .code-tabs {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 .code-tab {
@@ -1162,6 +1219,7 @@ onUnmounted(() => {
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all 0.3s;
+  white-space: nowrap;
 }
 
 .code-tab.active {
@@ -1179,6 +1237,7 @@ onUnmounted(() => {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
+  width: 100%;
 }
 
 .code-header {
@@ -1218,6 +1277,9 @@ onUnmounted(() => {
   color: var(--color-text-muted);
   cursor: pointer;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .copy-btn:hover {
@@ -1230,16 +1292,18 @@ onUnmounted(() => {
 }
 
 .code-block {
-  padding: 24px;
+  padding: 20px;
   overflow-x: auto;
   margin: 0;
+  width: 100%;
 }
 
 .code-block code {
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.8;
   color: #e0e0e0;
+  white-space: pre;
 }
 
 .code-comment { color: #6b7280; }
@@ -1248,14 +1312,15 @@ onUnmounted(() => {
 
 /* ========== 演示区域 ========== */
 .demo {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--color-bg);
+  width: 100%;
 }
 
 .demo-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -1319,6 +1384,7 @@ onUnmounted(() => {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  width: 100%;
 }
 
 .mockup-header {
@@ -1338,11 +1404,11 @@ onUnmounted(() => {
 
 .mockup-content {
   display: flex;
-  height: 400px;
+  height: 380px;
 }
 
 .mockup-sidebar {
-  width: 80px;
+  width: 70px;
   background: #181825;
   border-right: 1px solid var(--color-border);
 }
@@ -1354,17 +1420,17 @@ onUnmounted(() => {
 }
 
 .mockup-topbar {
-  height: 50px;
+  height: 45px;
   background: #181825;
   border-bottom: 1px solid var(--color-border);
 }
 
 .mockup-body {
   flex: 1;
-  padding: 16px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .mockup-card {
@@ -1376,9 +1442,10 @@ onUnmounted(() => {
 
 /* ========== 页脚 ========== */
 .footer {
-  padding: 60px 0 30px;
+  padding: 50px 0 24px;
   background: var(--color-bg-secondary);
   border-top: 1px solid var(--color-border);
+  width: 100%;
 }
 
 .footer-content {
@@ -1482,18 +1549,27 @@ onUnmounted(() => {
     padding: 16px 0;
   }
   
+  .nav-container {
+    padding: 0 16px;
+  }
+  
   .hero {
-    padding: 100px 16px 60px;
+    padding: 80px 16px 50px;
+  }
+  
+  .hero-content {
+    padding: 0;
   }
   
   .hero-cta {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   
   .hero-cta .btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     justify-content: center;
   }
   
@@ -1507,14 +1583,25 @@ onUnmounted(() => {
   
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .feature-card {
+    padding: 24px;
   }
   
   .tech-showcase {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   
   .code-tabs {
-    overflow-x: auto;
+    justify-content: center;
+  }
+  
+  .code-block {
+    padding: 16px;
+    font-size: 12px;
   }
   
   .footer-content {
@@ -1524,20 +1611,34 @@ onUnmounted(() => {
   
   .footer-links {
     gap: 40px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .container {
+    padding: 0 16px;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 26px;
+    font-size: 24px;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-description {
+    font-size: 14px;
   }
   
   .feature-card {
-    padding: 24px 20px;
+    padding: 20px;
   }
   
-  .code-block {
-    padding: 16px;
+  .code-tab {
+    padding: 10px 16px;
     font-size: 13px;
   }
 }
