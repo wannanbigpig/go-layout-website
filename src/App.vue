@@ -565,8 +565,8 @@ onUnmounted(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
+  gap: 6px;
+  padding: 10px 20px;
   border-radius: var(--radius-md);
   font-size: 14px;
   font-weight: 500;
@@ -575,14 +575,14 @@ onUnmounted(() => {
   cursor: pointer;
   border: none;
   white-space: nowrap;
-  min-height: 44px;
+  min-height: 40px;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-  min-width: 140px;
+  min-width: 120px;
   width: auto;
 }
 
@@ -595,7 +595,7 @@ onUnmounted(() => {
   background: var(--color-bg-card);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  min-width: 140px;
+  min-width: 120px;
   width: auto;
 }
 
@@ -605,9 +605,9 @@ onUnmounted(() => {
 }
 
 .btn-large {
-  padding: 14px 28px;
-  font-size: 15px;
-  min-width: 160px;
+  padding: 12px 24px;
+  font-size: 14px;
+  min-width: 140px;
   width: auto;
 }
 
@@ -1653,7 +1653,7 @@ onUnmounted(() => {
   
   .btn-large {
     width: 100%;
-    max-width: 280px;
+    max-width: 240px;
     margin: 0 auto;
     display: flex;
   }
