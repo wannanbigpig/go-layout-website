@@ -566,8 +566,8 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
+  padding: 6px 16px;
+  border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
@@ -575,28 +575,26 @@ onUnmounted(() => {
   cursor: pointer;
   border: none;
   white-space: nowrap;
-  min-height: 40px;
+  height: 36px;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-  min-width: 120px;
-  width: auto;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+  min-width: 100px;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
 }
 
 .btn-secondary {
   background: var(--color-bg-card);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  min-width: 120px;
-  width: auto;
+  min-width: 100px;
 }
 
 .btn-secondary:hover {
@@ -605,10 +603,9 @@ onUnmounted(() => {
 }
 
 .btn-large {
-  padding: 12px 24px;
+  padding: 8px 20px;
   font-size: 14px;
-  min-width: 140px;
-  width: auto;
+  height: 40px;
 }
 
 /* ========== 导航栏 ========== */
