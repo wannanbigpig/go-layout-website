@@ -225,13 +225,6 @@
               <span class="tab-icon">🎨</span>
               <span>前端</span>
             </button>
-            <button 
-              :class="['code-tab', { active: activeTab === 'docker' }]"
-              @click="activeTab = 'docker'"
-            >
-              <span class="tab-icon">🐳</span>
-              <span>Docker</span>
-            </button>
           </div>
           
           <div class="code-content">
@@ -507,21 +500,12 @@ npm install
 npm run dev
 
 # 构建生产版本
-npm run build`,
-  docker: `# 使用 Docker Compose 一键启动
-docker-compose up -d
-
-# 查看日志
-docker-compose logs -f
-
-# 停止服务
-docker-compose down`
+npm run build`
 }
 
 const codeTitles = {
   backend: 'terminal — backend',
-  frontend: 'terminal — frontend',
-  docker: 'terminal — docker'
+  frontend: 'terminal — frontend'
 }
 
 const highlightedCode = computed(() => {
@@ -784,10 +768,6 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 4px;
 }
 
 .theme-btn {
@@ -825,8 +805,8 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
+  background: transparent;
+  border: none;
   border-radius: var(--radius-sm);
   color: var(--color-text);
   text-decoration: none;
@@ -836,7 +816,6 @@ onUnmounted(() => {
 }
 
 .github-btn:hover {
-  border-color: var(--color-primary);
   background: var(--color-bg-secondary);
 }
 
