@@ -59,7 +59,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          <span>v2.0 现已发布</span>
+          <span>开源项目</span>
         </div>
         
         <h1 class="hero-title">
@@ -576,6 +576,7 @@ onUnmounted(() => {
   border: none;
   white-space: nowrap;
   height: 36px;
+  text-align: center;
 }
 
 .btn-primary {
@@ -606,6 +607,17 @@ onUnmounted(() => {
   padding: 8px 20px;
   font-size: 14px;
   height: 40px;
+}
+
+.btn-large svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn-large span {
+  text-align: center;
+  flex: 1;
 }
 
 /* ========== 导航栏 ========== */
