@@ -383,6 +383,7 @@ const applyTheme = (themeMode) => {
   
   if (themeMode === 'dark') {
     website.style.setProperty('--color-bg', '#0a0a0f')
+    website.style.setProperty('--color-bg-rgb', '10, 10, 15')
     website.style.setProperty('--color-bg-secondary', '#12121a')
     website.style.setProperty('--color-bg-card', '#1a1a25')
     website.style.setProperty('--color-text', '#ffffff')
@@ -394,6 +395,7 @@ const applyTheme = (themeMode) => {
     website.style.setProperty('--shadow-lg', '0 10px 40px rgba(0, 0, 0, 0.5)')
   } else {
     website.style.setProperty('--color-bg', '#ffffff')
+    website.style.setProperty('--color-bg-rgb', '255, 255, 255')
     website.style.setProperty('--color-bg-secondary', '#f5f5f7')
     website.style.setProperty('--color-bg-card', '#ffffff')
     website.style.setProperty('--color-text', '#1a1a1a')
@@ -562,6 +564,7 @@ onUnmounted(() => {
 /* ========== CSS 变量 ========== */
 .website {
   --color-bg: #0a0a0f;
+  --color-bg-rgb: 10, 10, 15;
   --color-bg-secondary: #12121a;
   --color-bg-card: #1a1a25;
   --color-text: #ffffff;
@@ -709,7 +712,7 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 15, 0.95);
+  background: rgba(var(--color-bg-rgb), 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
   padding: 12px 0;
