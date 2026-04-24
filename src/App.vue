@@ -407,7 +407,7 @@ const applyTheme = (themeMode) => {
 }
 
 const initTheme = () => {
-  const savedTheme = localStorage.getItem('theme') || 'dark'
+  const savedTheme = localStorage.getItem('theme') || 'system'
   theme.value = savedTheme
   applyTheme(savedTheme)
   
@@ -1347,7 +1347,7 @@ onUnmounted(() => {
 }
 
 .code-content {
-  background: #1e1e2e;
+  background: var(--color-bg-card);
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
@@ -1359,7 +1359,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 16px;
   padding: 12px 16px;
-  background: #181825;
+  background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -1513,7 +1513,7 @@ onUnmounted(() => {
 
 .mockup-header {
   padding: 12px 16px;
-  background: #181825;
+  background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -1523,7 +1523,7 @@ onUnmounted(() => {
 }
 
 .mockup-dots .dot {
-  background: #3f3f5f;
+  background: var(--color-text-muted);
 }
 
 .mockup-content {
@@ -1533,7 +1533,7 @@ onUnmounted(() => {
 
 .mockup-sidebar {
   width: 70px;
-  background: #181825;
+  background: var(--color-bg-secondary);
   border-right: 1px solid var(--color-border);
 }
 
@@ -1545,7 +1545,7 @@ onUnmounted(() => {
 
 .mockup-topbar {
   height: 45px;
-  background: #181825;
+  background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -1559,7 +1559,7 @@ onUnmounted(() => {
 
 .mockup-card {
   flex: 1;
-  background: #181825;
+  background: var(--color-bg-card);
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
 }
