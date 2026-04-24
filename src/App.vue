@@ -1398,13 +1398,13 @@ onUnmounted(() => {
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
   font-size: 13px;
   line-height: 1.8;
-  color: #e0e0e0;
+  color: var(--color-text);
   white-space: pre;
 }
 
-.code-comment { color: #6b7280; }
-.code-command { color: #60a5fa; }
-.code-url { color: #34d399; text-decoration: underline; }
+.code-comment { color: var(--color-text-muted); }
+.code-command { color: var(--color-primary); }
+.code-url { color: var(--color-success); text-decoration: underline; }
 
 /* ========== 演示区域 ========== */
 .demo {
