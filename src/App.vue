@@ -4,9 +4,7 @@
     <header :class="['navbar', { scrolled: isScrolled }]">
       <div class="nav-container">
         <div class="logo" @click="scrollTo('home')">
-          <div class="logo-icon">
-            <div class="logo-square"></div>
-          </div>
+          <img src="./assets/logo.png" alt="Gin Layout" class="logo-img" />
           <span class="logo-text">Gin Layout</span>
         </div>
         
@@ -304,7 +302,7 @@
         <div class="footer-content">
           <div class="footer-brand">
             <div class="footer-logo">
-              <div class="logo-square"></div>
+              <img src="./assets/logo.png" alt="Gin Layout" class="logo-img" />
               <span>Gin Layout</span>
             </div>
             <p class="footer-desc">让 Go 后台开发更简单</p>
@@ -657,20 +655,10 @@ onUnmounted(() => {
   flex-shrink: 0;
 }
 
-.logo-icon {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-square {
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  border-radius: 6px;
-  transform: rotate(45deg);
+.logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -1480,9 +1468,9 @@ onUnmounted(() => {
   margin-bottom: 12px;
 }
 
-.footer-logo .logo-square {
-  width: 28px;
-  height: 28px;
+.footer-logo .logo-img {
+  width: 32px;
+  height: 32px;
 }
 
 .footer-logo span {
