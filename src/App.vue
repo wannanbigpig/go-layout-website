@@ -402,7 +402,7 @@ const applyTheme = (themeMode) => {
 }
 
 const initTheme = () => {
-  const savedTheme = localStorage.getItem('theme') || 'system'
+  const savedTheme = localStorage.getItem('theme') || 'dark'
   theme.value = savedTheme
   applyTheme(savedTheme)
   
@@ -418,58 +418,58 @@ const features = [
   {
     icon: 'User',
     iconName: 'User',
-    title: '用户管理',
-    description: '完整的用户生命周期管理',
-    items: ['CRUD 操作', '批量导入导出', '多条件筛选', '状态管理']
+    title: 'JWT 认证',
+    description: '内置登录认证体系',
+    items: ['Token 登录', '自动刷新', 'Token 黑名单', '登录日志']
   },
   {
     icon: 'Lock',
     iconName: 'Lock',
-    title: '权限控制',
-    description: '基于 Casbin 的 RBAC',
-    items: ['细粒度权限', '角色继承', '权限缓存', '动态授权']
+    title: 'RBAC 权限',
+    description: '基于数据库的权限模型',
+    items: ['管理员管理', '角色管理', '部门管理', '菜单管理']
   },
   {
     icon: 'Menu',
     iconName: 'Menu',
-    title: '菜单管理',
-    description: '动态路由配置',
-    items: ['多级菜单', '按钮权限', '外链支持', '多语言']
+    title: '声明式路由',
+    description: '统一的路由树管理',
+    items: ['动态路由', 'API 元数据', '权限重建', '菜单国际化']
   },
   {
     icon: 'Connection',
     iconName: 'Connection',
-    title: '部门管理',
-    description: '树形组织架构',
-    items: ['无限层级', '部门用户', '数据权限', '组织统计']
+    title: '请求日志',
+    description: '完整的操作审计',
+    items: ['请求日志', '登录日志', '统一响应', '错误追踪']
   },
   {
     icon: 'Setting',
     iconName: 'Setting',
-    title: '角色管理',
-    description: '灵活的角色系统',
-    items: ['角色配置', '权限分配', '角色继承', '批量授权']
+    title: '配置热更新',
+    description: '运行中动态配置',
+    items: ['文件监听', '失败回滚', '优雅降级', '多环境支持']
   },
   {
     icon: 'Document',
     iconName: 'Document',
-    title: '日志审计',
-    description: '完整的操作记录',
-    items: ['登录日志', '请求日志', '操作审计', '数据分析']
+    title: 'I18n 国际化',
+    description: '多语言支持',
+    items: ['zh-CN / en-US', 'Accept-Language', '错误文案', '菜单标题']
   }
 ]
 
 const backendTech = [
-  { name: 'Go', desc: '1.21+', icon: 'Code', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #00ADD8, #005f73)' },
+  { name: 'Go', desc: '1.23+', icon: 'Code', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #00ADD8, #005f73)' },
   { name: 'Gin', desc: 'Web 框架', icon: 'Server', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #0091EA, #0056b3)' },
   { name: 'MySQL', desc: '数据存储', icon: 'Database', iconName: 'DataAnalysis', gradient: 'linear-gradient(135deg, #4479A1, #2c5270)' },
-  { name: 'Redis', desc: '缓存队列', icon: 'Cpu', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #DC382D, #9b2c2c)' }
+  { name: 'Redis', desc: '缓存/队列', icon: 'Cpu', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #DC382D, #9b2c2c)' }
 ]
 
 const frontendTech = [
-  { name: 'Vue 3', desc: '前端框架', icon: 'Monitor', iconName: 'Monitor', gradient: 'linear-gradient(135deg, #42B883, #2d7a55)' },
-  { name: 'Element Plus', desc: 'UI 组件库', icon: 'Grid', iconName: 'Grid', gradient: 'linear-gradient(135deg, #409EFF, #2b6cb0)' },
-  { name: 'Vite', desc: '构建工具', icon: 'Vite', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #646CFF, #4338ca)' },
+  { name: 'Vue 3', desc: '3.4+', icon: 'Monitor', iconName: 'Monitor', gradient: 'linear-gradient(135deg, #42B883, #2d7a55)' },
+  { name: 'Element Plus', desc: '2.7+', icon: 'Grid', iconName: 'Grid', gradient: 'linear-gradient(135deg, #409EFF, #2b6cb0)' },
+  { name: 'Vite', desc: '5.3+', icon: 'Vite', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #646CFF, #4338ca)' },
   { name: 'TypeScript', desc: '类型安全', icon: 'TS', iconName: 'Cpu', gradient: 'linear-gradient(135deg, #3178C6, #1e4a7a)' }
 ]
 
@@ -481,14 +481,15 @@ cd gin-layout
 # 安装依赖
 go mod tidy
 
-# 配置数据库 (编辑 config.yaml)
-# 运行迁移
-go run cmd/gin-layout/main.go command init-system -c config.yaml
+# 执行数据库迁移
+migrate -database 'mysql://...' -path data/migrations up
+
+# 配置 config.yaml（MySQL、Redis、JWT）
 
 # 启动服务
-go run cmd/gin-layout/main.go service -c config.yaml
+go run main.go service
 
-# 访问 http://localhost:9001`,
+# 访问 http://localhost:9001/ping`,
   frontend: `# 克隆项目
 git clone https://github.com/wannanbigpig/go-admin-ui.git
 cd go-admin-ui
@@ -500,7 +501,7 @@ npm install
 npm run dev
 
 # 构建生产版本
-npm run build`
+npm run build:production`
 }
 
 const codeTitles = {
@@ -510,10 +511,13 @@ const codeTitles = {
 
 const highlightedCode = computed(() => {
   const code = codeExamples[activeTab.value]
-  return code
-    .replace(/(#.*)/g, '<span class="code-comment">$1</span>')
-    .replace(/(git|go|npm|docker|cd)/g, '<span class="code-command">$1</span>')
-    .replace(/(https?:\/\/[^\s]+)/g, '<span class="code-url">$1</span>')
+  // 先处理 URL，避免其他关键字匹配干扰
+  let result = code.replace(/(https?:\/\/[^\s]+)/g, '<span class="code-url">$1</span>')
+  // 处理注释
+  result = result.replace(/(#.*)/g, '<span class="code-comment">$1</span>')
+  // 处理命令关键字（只在行首或空格后匹配）
+  result = result.replace(/(^|\s)(git|go|npm|docker|cd)(\s)/gm, '$1<span class="code-command">$2</span>$3')
+  return result
 })
 
 const copyCode = () => {
